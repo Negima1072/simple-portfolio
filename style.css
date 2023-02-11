@@ -36,6 +36,10 @@ a{
   padding: 5vw;
 }
 
+.section.meta{
+  padding-left: 0;
+}
+
 .main{
   width: 30vw;
   display: flex;
@@ -120,12 +124,12 @@ img.icon{
 .links > a{
   font-size: 1.7rem;
   height: 1.7rem;
-  fill: var(--forground-color);
+  fill: currentColor;
 }
 
 .links > a:hover{
   color: var(--forground-sub-color);
-  fill: var(--forground-sub-color);
+  fill: currentColor;
   cursor: pointer;
 }
 
@@ -134,7 +138,7 @@ img.icon{
     grid-template-columns: 1fr;
   }
   .section{
-    padding: 5px;
+    padding: 5px !important;
   }
   .main{
     margin-top: 20px;
