@@ -46,6 +46,10 @@ a{
   margin-bottom: 50px;
 }
 
+.name{
+  margin-left: 20px;
+}
+
 .name > h2{
   margin-top: 10px;
   font-size: 4.8vh;
@@ -154,6 +158,7 @@ img.icon{
   }
   .name{
     margin-top: 30px;
+    margin-left: 0px;
   }
   .sub{
     width: 90%;
