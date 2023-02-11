@@ -163,3 +163,9 @@ img.icon{
     height: 18vh;
   }
 }
+
+@media(max-width:445px){
+  .sub > h2{
+    font-size: 1.5em;
+  }
+}
