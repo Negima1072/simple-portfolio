@@ -60,9 +60,9 @@
           <span>SQL</span>
           <span>TypeScript</span>
         </p>
-        <iframe class="linksTop" src="links.html" allow-same-origin scrolling="no" frameborder="0"></iframe>
+        <iframe title="Links" class="linksTop" src="links.html" allow-same-origin scrolling="no" frameborder="0"></iframe>
         <div class="bottom">
-          <button id="bottomBtn">
+          <button id="bottomBtn" aria-label="下へ">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
               <path d="M201.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 338.7 54.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/>
             </svg>
@@ -71,7 +71,7 @@
       </div>
       <div class="sub" id="works">
         <div class="top">
-          <button id="topBtn">
+          <button id="topBtn" aria-label="上へ">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
               <path d="M201.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 173.3 54.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"/>
             </svg>
@@ -79,6 +79,27 @@
         </div>
         <h2>Works</h2>
         <div class="works">
+          <div class="work">
+            <h4>
+              CoCダイスボット
+              <div class="worklinks">
+                <a href="https://twitter.com/CoC_dicebot" target="_blank" rel=”noopener noreferrer” aria-label="WebSite">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 990 712">
+                    <use xlink:href="#linkSvg"></use>
+                  </svg>
+                </a>
+                <a href="https://github.com/Negima1072/CoCDiceBot-Node" target="_blank" rel=”noopener noreferrer” aria-label="GitHubRepo">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+                    <use xlink:href="#githubSvg"></use>
+                  </svg>
+                </a>
+              </div>
+            </h4>
+            <p class="stacks">
+              <span>TypeScript</span>
+              <span>TwitterAPI</span>
+            </p>
+          </div>
           <div class="work">
             <h4>
               ニコ動コメントアーカイブス
@@ -104,29 +125,8 @@
               <span>DockerCompose</span>
             </p>
           </div>
-          <div class="work">
-            <h4>
-              CoCダイスボット
-              <div class="worklinks">
-                <a href="https://twitter.com/CoC_dicebot" target="_blank" rel=”noopener noreferrer” aria-label="WebSite">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 990 712">
-                    <use xlink:href="#linkSvg"></use>
-                  </svg>
-                </a>
-                <a href="https://github.com/Negima1072/CoCDiceBot-Node" target="_blank" rel=”noopener noreferrer” aria-label="GitHubRepo">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
-                    <use xlink:href="#githubSvg"></use>
-                  </svg>
-                </a>
-              </div>
-            </h4>
-            <p class="stacks">
-              <span>TypeScript</span>
-              <span>TwitterAPI</span>
-            </p>
-          </div>
         </div>
-        <iframe class="linksBottom" src="links.html" allow-same-origin scrolling="no" frameborder="0"></iframe>
+        <iframe title="Links" class="linksBottom" src="links.html" allow-same-origin scrolling="no" frameborder="0"></iframe>
       </div>
     </div>
   </main>
@@ -143,10 +143,12 @@
     document.getElementById("topBtn").addEventListener("click", onTop);
     document.getElementById("meta").addEventListener("wheel", (e) => {
       if(e.deltaY >= 100) onBottom();
-    });
+      e.preventDefault();
+    }, {passive: true});
     document.getElementById("works").addEventListener("wheel", (e) => {
       if(e.deltaY <= -100) onTop();
-    });
+      e.preventDefault();
+    }, {passive: true});
   </script>
 </body>
 </html>
