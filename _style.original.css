@@ -31,10 +31,7 @@ a{
   justify-content: center;
   flex-direction: column;
   padding: 5vw;
-}
-
-.section.meta{
-  padding-left: 0;
+  margin-left: 0;
 }
 
 .main{
@@ -91,8 +88,9 @@ img.icon{
 }
 
 .sub{
-  width: 50vw;
+  width: 55vw;
   min-height: 80svh;
+  position: absolute;
 }
 
 .sub > h2{
@@ -207,13 +205,37 @@ img.icon{
   fill: currentColor;
 }
 
+.linksBottom{
+  display: none;
+}
+
+.linksTop{
+  display: block;
+}
+
 @media(max-width:650px){
+  .linksBottom{
+    display: block;
+  }
+  .linksTop{
+    display: none;
+  }
   .grid{
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    height: auto;
   }
   .section{
     padding: 5px !important;
     justify-content: flex-start;
+    position: static;
+    margin-left: 5vw;
+  }
+  .section.meta{
+    margin-top: 0;
+  }
+  .section.prof{
+    margin-bottom: 0;
   }
   .main{
     margin-top: 20px;
@@ -234,19 +256,30 @@ img.icon{
     width: 18vh;
     height: 18vh;
   }
-  #bottomBtn, #topBtn{
-    display: none;
+  .bottom, .top{
+    display: none !important;
   }
   #meta, #works{
-    display: block !important;
+    visibility: visible !important;
+    position: static !important;
   }
   #works > h2{
-    margin-top: 18px;
+    margin-top: 0.83em;
   }
 }
 
 @media(max-width:445px){
   .sub > h2{
     font-size: 1.5em;
+  }
+}
+
+@media(max-width:345px){
+  .main{
+    flex-direction: column;
+    gap: 0;
+  }
+  .name{
+    margin-top: 0;
   }
 }
